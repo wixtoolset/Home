@@ -4,8 +4,15 @@ SET _P=%~dp0
 
 :NextArg
 IF /I "%1"=="data" (CALL :Enlist Data& SET _E=1)
+IF /I "%1"=="dutil" (CALL :Enlist dutil& SET _E=1)
 IF /I "%1"=="extensibility" (CALL :Enlist Extensibility& SET _E=1)
 IF /I "%1"=="core" (CALL :Enlist Core& SET _E=1)
+IF /I "%1"=="core.native" (CALL :Enlist Core.Native& SET _E=1)
+IF /I "%1"=="corenative" (CALL :Enlist Core.Native& SET _E=1)
+IF /I "%1"=="native" (CALL :Enlist Core.Native& SET _E=1)
+if /I "%1"=="visualstudioextension"  (CALL :Enlist VisualStudioExtension& SET _E=1)
+if /I "%1"=="votive"  (CALL :Enlist VisualStudioExtension& SET _E=1)
+IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
 IF "%1"=="" GOTO :Done
 
 IF /I "%1"=="-?" GOTO :Syntax
@@ -52,7 +59,11 @@ ECHO.
 ECHO Syntax: enlist project
 ECHO.
 ECHO   Available projects:
-ECHO     Data
-ECHO     Extensibility
 ECHO     Core
+ECHO     Core.Native
+ECHO     Data
+ECHO     dutil
+ECHO     Extensibility
+ECHO     VisualStudioExtension
+ECHO     wcautil
 ECHO.
