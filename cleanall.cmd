@@ -9,6 +9,8 @@ IF EXIST wcautil (CALL :DoAction wcautil %*)
 IF EXIST Dtf (CALL :DoAction Dtf %*)
 IF EXIST Core.Native (CALL :DoAction Core.Native %*)
 IF EXIST Core (CALL :DoAction Core %*)
+IF EXIST Tools (CALL :DoAction Tools %*)
+IF EXIST LegacyTools (CALL :DoAction LegacyTools %*)
 IF EXIST Setup (CALL :DoAction Setup %*)
 
 POPD
