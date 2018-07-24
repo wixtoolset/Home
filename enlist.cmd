@@ -15,6 +15,10 @@ IF /I "%1"=="tools" (CALL :Enlist Tools& SET _E=1)
 if /I "%1"=="visualstudioextension"  (CALL :Enlist VisualStudioExtension& SET _E=1)
 if /I "%1"=="votive"  (CALL :Enlist VisualStudioExtension& SET _E=1)
 IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
+IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
+IF /I "%1"=="netfx" (CALL :Enlist NetFx.wixext& SET _E=1)
+IF /I "%1"=="util" (CALL :Enlist Util.wixext& SET _E=1)
+IF /I "%1"=="vs.wixext" (CALL :Enlist VisualStudio.wixext& SET _E=1)
 IF "%1"=="" GOTO :Done
 
 IF /I "%1"=="-?" GOTO :Syntax
@@ -70,4 +74,10 @@ ECHO     dutil
 ECHO     Extensibility
 ECHO     VisualStudioExtension
 ECHO     wcautil
+ECHO.
+ECHO   Extension projects:
+ECHO     firewall
+ECHO     netfx
+ECHO     util
+ECHO     vs.wixext
 ECHO.
