@@ -11,11 +11,11 @@ IF EXIST Core.Native (CALL :DoAction Core.Native %*)
 IF EXIST Core (CALL :DoAction Core %*)
 IF EXIST Tools (CALL :DoAction Tools %*)
 IF EXIST LegacyTools (CALL :DoAction LegacyTools %*)
+IF EXIST Util.wixext (CALL :DoAction Util.wixext %*)
 IF EXIST Firewall.wixext (CALL :DoAction Firewall.wixext %*)
 IF EXIST NetFx.wixext (CALL :DoAction NetFx.wixext %*)
-IF EXIST Util.wixext (CALL :DoAction Util.wixext %*)
 IF EXIST VisualStudio.wixext (CALL :DoAction VisualStudio.wixext %*)
-IF EXIST Setup (CALL :DoAction Setup %*)
+@rem IF EXIST Setup (CALL :DoAction Setup %*)
 
 POPD
 GOTO :EOF
