@@ -14,8 +14,10 @@ IF EXIST LegacyTools (CALL :DoAction LegacyTools %*)
 IF EXIST Util.wixext (CALL :DoAction Util.wixext %*)
 IF EXIST Firewall.wixext (CALL :DoAction Firewall.wixext %*)
 IF EXIST NetFx.wixext (CALL :DoAction NetFx.wixext %*)
+IF EXIST Sql.wixext (CALL :DoAction Sql.wixext %*)
 IF EXIST VisualStudio.wixext (CALL :DoAction VisualStudio.wixext %*)
 @rem IF EXIST Setup (CALL :DoAction Setup %*)
+@rem IF EXIST VisualStudioExtension (CALL :DoAction VisualStudioExtension %*)
 
 POPD
 GOTO :EOF
