@@ -18,6 +18,7 @@ if /I "%1"=="visualstudioextension"  (CALL :Enlist VisualStudioExtension& SET _E
 if /I "%1"=="votive"  (CALL :Enlist VisualStudioExtension& SET _E=1)
 IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
 IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
+IF /I "%1"=="iis" (CALL :Enlist Iis.wixext& SET _E=1)
 IF /I "%1"=="netfx" (CALL :Enlist NetFx.wixext& SET _E=1)
 IF /I "%1"=="sql" (CALL :Enlist Sql.wixext& SET _E=1)
 IF /I "%1"=="util" (CALL :Enlist Util.wixext& SET _E=1)
@@ -86,6 +87,7 @@ ECHO     WixBuildTools
 ECHO.
 ECHO   Extension projects:
 ECHO     firewall
+ECHO     iis
 ECHO     netfx
 ECHO     sql
 ECHO     util
