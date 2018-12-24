@@ -78,8 +78,10 @@ ECHO     Data
 ECHO     Dtf
 ECHO     dutil
 ECHO     Extensibility
+ECHO     Iis
 ECHO     LegacyTools
 ECHO     Setup
+ECHO     Sql
 ECHO     Tools
 ECHO     VisualStudioExtension
 ECHO     wcautil
