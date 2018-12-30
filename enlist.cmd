@@ -4,6 +4,9 @@ SET _P=%~dp0
 
 :NextArg
 IF /I "%1"=="wixbuildtools" (CALL :Enlist WixBuildTools& SET _E=1)
+IF /I "%1"=="balutil" (CALL :Enlist balutil& SET _E=1)
+IF /I "%1"=="bootstrappercore" (CALL :Enlist BootstrapperCore& SET _E=1)
+IF /I "%1"=="burn" (CALL :Enlist burn& SET _E=1)
 IF /I "%1"=="data" (CALL :Enlist Data& SET _E=1)
 IF /I "%1"=="dutil" (CALL :Enlist dutil& SET _E=1)
 IF /I "%1"=="extensibility" (CALL :Enlist Extensibility& SET _E=1)
@@ -72,6 +75,9 @@ ECHO.
 ECHO Syntax: enlist project
 ECHO.
 ECHO   Available projects:
+ECHO     balutil
+ECHO     BootstrapperCore
+ECHO     burn
 ECHO     Core
 ECHO     Core.Native
 ECHO     Data
