@@ -25,6 +25,7 @@ IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
 IF /I "%1"=="iis" (CALL :Enlist Iis.wixext& SET _E=1)
 IF /I "%1"=="netfx" (CALL :Enlist NetFx.wixext& SET _E=1)
 IF /I "%1"=="sql" (CALL :Enlist Sql.wixext& SET _E=1)
+IF /I "%1"=="ui" (CALL :Enlist UI.wixext& SET _E=1)
 IF /I "%1"=="util" (CALL :Enlist Util.wixext& SET _E=1)
 IF /I "%1"=="vs.wixext" (CALL :Enlist VisualStudio.wixext& SET _E=1)
 IF /I "%1"=="setup" (CALL :Enlist Setup& SET _E=1)
@@ -98,6 +99,7 @@ ECHO     firewall
 ECHO     iis
 ECHO     netfx
 ECHO     sql
+ECHO     ui
 ECHO     util
 ECHO     vs.wixext
 ECHO.
