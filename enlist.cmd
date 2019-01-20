@@ -23,8 +23,11 @@ IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
 IF /I "%1"=="bal" (CALL :Enlist Bal.wixext& SET _E=1)
 IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
 IF /I "%1"=="iis" (CALL :Enlist Iis.wixext& SET _E=1)
+IF /I "%1"=="msmq" (CALL :Enlist Msmq.wixext& SET _E=1)
 IF /I "%1"=="netfx" (CALL :Enlist NetFx.wixext& SET _E=1)
+IF /I "%1"=="powershell" (CALL :Enlist PowerShell.wixext& SET _E=1)
 IF /I "%1"=="sql" (CALL :Enlist Sql.wixext& SET _E=1)
+IF /I "%1"=="tag" (CALL :Enlist Tag.wixext& SET _E=1)
 IF /I "%1"=="ui" (CALL :Enlist UI.wixext& SET _E=1)
 IF /I "%1"=="util" (CALL :Enlist Util.wixext& SET _E=1)
 IF /I "%1"=="vs.wixext" (CALL :Enlist VisualStudio.wixext& SET _E=1)
@@ -97,8 +100,11 @@ ECHO   Extension projects:
 ECHO     bal
 ECHO     firewall
 ECHO     iis
+ECHO     msmq
 ECHO     netfx
+ECHO     powershell
 ECHO     sql
+ECHO     tag
 ECHO     ui
 ECHO     util
 ECHO     vs.wixext
