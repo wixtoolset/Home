@@ -22,6 +22,8 @@ if /I "%1"=="votive"  (CALL :Enlist VisualStudioExtension& SET _E=1)
 IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
 IF /I "%1"=="bal" (CALL :Enlist Bal.wixext& SET _E=1)
 IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
+IF /I "%1"=="gaming" (CALL :Enlist Gaming.wixext& SET _E=1)
+IF /I "%1"=="http" (CALL :Enlist Http.wixext& SET _E=1)
 IF /I "%1"=="iis" (CALL :Enlist Iis.wixext& SET _E=1)
 IF /I "%1"=="msmq" (CALL :Enlist Msmq.wixext& SET _E=1)
 IF /I "%1"=="netfx" (CALL :Enlist NetFx.wixext& SET _E=1)
@@ -99,6 +101,8 @@ ECHO.
 ECHO   Extension projects:
 ECHO     bal
 ECHO     firewall
+ECHO     gaming
+ECHO     http
 ECHO     iis
 ECHO     msmq
 ECHO     netfx
