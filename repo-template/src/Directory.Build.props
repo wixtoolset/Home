@@ -23,5 +23,6 @@
   </PropertyGroup>
 
   <Import Project="Cpp.Build.props" Condition=" '$(MSBuildProjectExtension)'=='.vcxproj' " />
+  <Import Project="Wix.Build.props" Condition=" '$(MSBuildProjectExtension)'=='.wixproj' " />
   <Import Project="Custom.Build.props" Condition=" Exists('Custom.Build.props') " />
 </Project>
