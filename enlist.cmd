@@ -21,6 +21,10 @@ if /I "%1"=="visualstudioextension"  (CALL :Enlist VisualStudioExtension& SET _E
 if /I "%1"=="votive"  (CALL :Enlist VisualStudioExtension& SET _E=1)
 IF /I "%1"=="wcautil" (CALL :Enlist wcautil& SET _E=1)
 IF /I "%1"=="bal" (CALL :Enlist Bal.wixext& SET _E=1)
+IF /I "%1"=="complus" (CALL :Enlist ComPlus.wixext& SET _E=1)
+IF /I "%1"=="dependency" (CALL :Enlist Dependency.wixext& SET _E=1)
+IF /I "%1"=="difxapp" (CALL :Enlist DifxApp.wixext& SET _E=1)
+IF /I "%1"=="directx" (CALL :Enlist DirectX.wixext& SET _E=1)
 IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
 IF /I "%1"=="gaming" (CALL :Enlist Gaming.wixext& SET _E=1)
 IF /I "%1"=="http" (CALL :Enlist Http.wixext& SET _E=1)
@@ -100,6 +104,10 @@ ECHO     WixBuildTools
 ECHO.
 ECHO   Extension projects:
 ECHO     bal
+ECHO     complus
+ECHO     dependency
+ECHO     difxapp
+ECHO     directx
 ECHO     firewall
 ECHO     gaming
 ECHO     http
