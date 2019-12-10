@@ -90,6 +90,7 @@ ECHO   Available projects:
 ECHO     balutil
 ECHO     BootstrapperCore
 ECHO     burn
+ECHO     Converters
 ECHO     Core
 ECHO     Core.Native
 ECHO     Data
