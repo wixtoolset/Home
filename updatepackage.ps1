@@ -24,7 +24,7 @@ function updateProject {
     #Write-Host 'project' $targetFile
     $changed = $false
     $fileContents = [System.IO.File]::ReadAllText($targetFile) # project files should be small right?
-    $oldStyleMatches = [System.Text.RegularExpressions.Regex]::Matches($fileContents,  '[\\">]packages\\' + $packageName + '\.([^\\]*)\\')
+    $oldStyleMatches = [System.Text.RegularExpressions.Regex]::Matches($fileContents,  '[\\">]packages\\' + $packageName + '\.([0-9][^\\]*)\\')
     $oldStyleMatches | ForEach-Object {
         $previousVersion = $_.Groups[1]
         #Write-Host $previousVersion
