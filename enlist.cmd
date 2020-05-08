@@ -15,6 +15,7 @@ IF /I "%1"=="converters" (CALL :Enlist Converters& SET _E=1)
 IF /I "%1"=="core" (CALL :Enlist Core& SET _E=1)
 IF /I "%1"=="core.native" (CALL :Enlist Core.Native& SET _E=1)
 IF /I "%1"=="corenative" (CALL :Enlist Core.Native& SET _E=1)
+IF /I "%1"=="harvesters" (CALL :Enlist Harvesters& SET _E=1)
 IF /I "%1"=="legacytools" (CALL :Enlist LegacyTools& SET _E=1)
 IF /I "%1"=="native" (CALL :Enlist Core.Native& SET _E=1)
 IF /I "%1"=="tools" (CALL :Enlist Tools& SET _E=1)
@@ -97,6 +98,7 @@ ECHO     Data
 ECHO     Dtf
 ECHO     dutil
 ECHO     Extensibility
+ECHO     Harvesters
 ECHO     LegacyTools
 ECHO     Setup
 ECHO     Tools
