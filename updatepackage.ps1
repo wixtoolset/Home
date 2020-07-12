@@ -1,5 +1,23 @@
 param([string]$TargetFolder, [string]$PackageName, [string]$NewVersion)
 
+function updateGlobalJson {
+    param($targetFile, [string]$packageName, [string]$newVersion)
+
+    #Write-Host 'global.json' $targetFile
+    $changed = $false
+    $fileContents = [System.IO.File]::ReadAllText($targetFile)
+    $matches = [System.Text.RegularExpressions.Regex]::Matches($fileContents, "['""]$packageName['""]: *['""]([^'""]*)['""]")
+    $matches | ForEach-Object {
+        #$previousVersion = $_.Groups[1]
+        #Write-Host $previousVersion
+        $fileContents = $fileContents.Replace($_.Value, """$packageName"": ""$newVersion""")
+        $changed = $true
+    }
+    if ($changed) {
+        [System.IO.File]::WriteAllText($targetFile, $fileContents)
+    }
+}
+
 function updatePackagesConfig {
     param($targetFile, [string]$packageName, [string]$newVersion)
 
@@ -56,11 +74,15 @@ function updateProject {
 
 function updateNugetPackageVersion {
     param([string]$targetFolder, [string]$packageName, [string]$newVersion)
-    
+
+    Get-ChildItem -Path $targetFolder -Include global.json -Recurse | ForEach-Object {
+        updateGlobalJson -targetFile $_ -packageName $packageName -newVersion $newVersion
+    }
+
     Get-ChildItem -Path $targetFolder -Include packages.config -Recurse | ForEach-Object {
         updatePackagesConfig -targetFile $_ -packageName $packageName -newVersion $newVersion
     }
-    
+
     Get-ChildItem -Path $targetFolder -Include *.*proj -Recurse | ForEach-Object {
         updateProject -targetFile $_ -packageName $packageName -newVersion $newVersion
     }
