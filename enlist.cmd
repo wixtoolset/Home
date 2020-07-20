@@ -28,7 +28,6 @@ IF /I "%1"=="dependency" (CALL :Enlist Dependency.wixext& SET _E=1)
 IF /I "%1"=="difxapp" (CALL :Enlist DifxApp.wixext& SET _E=1)
 IF /I "%1"=="directx" (CALL :Enlist DirectX.wixext& SET _E=1)
 IF /I "%1"=="firewall" (CALL :Enlist Firewall.wixext& SET _E=1)
-IF /I "%1"=="gaming" (CALL :Enlist Gaming.wixext& SET _E=1)
 IF /I "%1"=="http" (CALL :Enlist Http.wixext& SET _E=1)
 IF /I "%1"=="iis" (CALL :Enlist Iis.wixext& SET _E=1)
 IF /I "%1"=="msmq" (CALL :Enlist Msmq.wixext& SET _E=1)
@@ -113,7 +112,6 @@ ECHO     dependency
 ECHO     difxapp
 ECHO     directx
 ECHO     firewall
-ECHO     gaming
 ECHO     http
 ECHO     iis
 ECHO     msmq
