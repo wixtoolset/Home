@@ -1,3 +1,5 @@
+<img src="https://github.com/wixtoolset/Home/raw/master/imgs/wix-white-bg.png" alt="WiX Toolset" height="128" />
+
 # Home
 
 The Home repository is the starting point for developers wanting to contribute to the WiX Toolset.
