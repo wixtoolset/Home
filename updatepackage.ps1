@@ -51,11 +51,11 @@ function updateProject {
     }
     # hmmm, don't want to use XML parsing for the whole document because it might make annoying formatting changes throughout the file
     # let's assume PackageReference elements don't span multiple lines
-    $packageReferenceMatches = [System.Text.RegularExpressions.Regex]::Matches($fileContents,  '<PackageReference.*' + $packageName + '.*>')
+    $packageReferenceMatches = [System.Text.RegularExpressions.Regex]::Matches($fileContents,  '<PackageReference.*' + $packageName + '.*>', 'IgnoreCase')
     $packageReferenceMatches | ForEach-Object {
         $xml = New-Object XML
         $xml.LoadXml($_.Value)
-        $query = "//PackageReference[@Include='" + $packageName + "']";
+        $query = "//PackageReference[translate(@Include, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='" + $packageName.ToLower() + "']";
         $packageReferenceNode = $xml.SelectSingleNode($query);
         if ($packageReferenceNode) {
             $previousVersion = $packageReferenceNode.Attributes['Version'].Value
