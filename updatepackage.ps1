@@ -58,12 +58,15 @@ function updateProject {
         $query = "//PackageReference[translate(@Include, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='" + $packageName.ToLower() + "']";
         $packageReferenceNode = $xml.SelectSingleNode($query);
         if ($packageReferenceNode) {
-            $previousVersion = $packageReferenceNode.Attributes['Version'].Value
-            #Write-Host $previousVersion
-            if ($previousVersion -ne $newVersion) {
-                $packageReferenceNode.Attributes['Version'].Value = $newVersion
-                $fileContents = $fileContents.Replace($_.Value, $packageReferenceNode.OuterXml)
-                $changed = $true
+            $previousAttribute = $packageReferenceNode.Attributes['Version'];
+            if ($previousAttribute) {
+                $previousVersion = $previousAttribute.Value;
+                #Write-Host $previousVersion
+                if ($previousVersion -ne $newVersion) {
+                    $packageReferenceNode.Attributes['Version'].Value = $newVersion
+                    $fileContents = $fileContents.Replace($_.Value, $packageReferenceNode.OuterXml)
+                    $changed = $true
+                }
             }
         }
     }
